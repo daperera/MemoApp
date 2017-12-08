@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language JavaScript?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="root" stylesheets="@../css/mirrorWindow.css" xmlns:fx="http://javafx.com/fxml/1">
+
+<top>
+	<BorderPane fx:id="banner">
+		<left>
+			<Button fx:id="synchronize" onAction="#synchronize" />
+		</left>
+		<right>
+			<Button fx:id="detach" onAction="#detach" />
+		</right>
+	</BorderPane>
+</top>
+	
+<center>
+	<VBox fx:id="mainPanel"> </VBox>
+</center>
+
+</BorderPane>
