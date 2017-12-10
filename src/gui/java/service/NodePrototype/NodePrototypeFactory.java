@@ -2,12 +2,16 @@ package gui.java.service.NodePrototype;
 
 import java.net.MalformedURLException;
 
+import processing.Config;
+
 public class NodePrototypeFactory {
 	
-	private final static String MAIN_WINDOW_MEMO_PANEL_HTML_PATH = "/gui/test.html";
 	
 	public static NodePrototype createMainPanelPrototype() {
-		return createMemoPanelPrototype(MAIN_WINDOW_MEMO_PANEL_HTML_PATH);
+		// initialize a MemoPanel loading the default html file
+		String mainWindowMemoPanelHtmlPath = Config.getDefaultMemoPanelHtmlPath();
+		NodePrototype mainPanel = createMemoPanelPrototype(mainWindowMemoPanelHtmlPath);
+		return mainPanel;
 	}
 	
 	public static NodePrototype createMemoPanelPrototype(String htmlPath) {

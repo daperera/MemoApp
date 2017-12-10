@@ -23,8 +23,9 @@ public class WindowFactory {
 	 * @return a new window object corresponding to the main window of the application
 	 */
 	public static Window createMainWindow(Stage primaryStage) {
-		// injecting a default mainPanel to the controller of the main window
+		// injecting a default mainPanel and a configuration object to the controller of the main window
 		NodePrototype mainPanelPrototype = NodePrototypeFactory.createMainPanelPrototype();
+		
 		Object controller = new MainWindowController(mainPanelPrototype);
 		
 		//set the application to exit when this window is closed

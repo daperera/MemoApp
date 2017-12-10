@@ -19,7 +19,7 @@ class MemoPanelPrototype implements NodePrototype {
 	private final String EngineLoadArg;
 	
 	MemoPanelPrototype(String htmlFilePath) throws MalformedURLException {
-		URL url = getClass().getResource(htmlFilePath);
+		URL url = new URL(htmlFilePath);
 		EngineLoadArg = url.toExternalForm();
 	}
 	
@@ -31,7 +31,7 @@ class MemoPanelPrototype implements NodePrototype {
 	    WebEngine webEngine = browser.getEngine();
 
 	    // injecting a DatabaseProxy object in the browser, once the html page is loaded.
-	    // Javascript function in the loaded html page can make upcall to this object 
+	    // Javascript functions of the loaded html page can make upcall to this object 
 	    // through the variable whose name is referenced by JAVASCRIPT_PROXY_NAME.
 	    // Once the script are loaded, the function 
 	    webEngine.getLoadWorker().stateProperty().addListener(
@@ -43,7 +43,6 @@ class MemoPanelPrototype implements NodePrototype {
 	    						window.call(JAVASCRIPT_READY_FUNCTION_NAME);
 	    					}
 	    				});
-	    
 	    //loading the html page
 	    webEngine.load(EngineLoadArg);
 	    
