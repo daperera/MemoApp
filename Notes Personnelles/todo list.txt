@@ -1,0 +1,34 @@
+CONCERNANT L APPLICATION
+- preferences files vs properties files ?
+-> preferences API => se passer d'une classe Config et appeler Preferences.userNodeForPackage(MyProgram.class) 
+.> dans chaque classe qui en a besoin ? Si oui comment gérer les clés (il faut que ce soient les mêmes...)? 
+- utiliser Platform.runLater() pour l'initialisation des controlleurs  ?
+- le choix de l'icone de la fenêtre fait dans la classe Windows ?
+- media de l'interface dans src/gui/resources/data ou bien dans data ?
+- chaque classe de l'interface connait l'addresse des media qu'elle utilise ? ou bien appel à une classe centrale ?
+- fenetre des préférences : modale ou pas ?
+- backup
+- synchronisation
+-> choix automatique ou pas (au démarrage et/ou toutes les x secondes) 
+-> synchroniser les médias ou pas
+
+
+CONCERNANT LES MEMO
+
+Onglet cuisine
+
+- bases de données annexes
+-> ingrédient (abstrait: par exemple, ne pas tenir compte du 
+prix ou de la marque ici, mais inclure des données comme les 
+calories, ou les vitamines contenues)
+-> ustentils
+-> ingrédients (concret: avec prix, marque, lieu d'achat, etc.)
+-> sites de recettes (et lier avec un algorithme de crawling qui 
+retrouve les infos sur ce site ?)
+
+- imiter pprésentation site bonappetit.com
+-> autoriser ajout photos pour chaque étape de la recette 
+--> si android: ouvrir l'appli photo
+-> photo sous ingrédient / ustentils
+--> garder une base de donnée avec une photo par ingrédient/ustentils
+-> lier une recette avec calories vitamines contenues

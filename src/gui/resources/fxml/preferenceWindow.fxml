@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language JavaScript?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="root" stylesheets="@../css/preferenceWindow.css" xmlns:fx="http://javafx.com/fxml">
+
+<center>
+	<TabPane>
+		<tabs>
+        <Tab text="General" closable="false">
+            <GridPane>
+            
+            	<!-- first line of the grid : set user data directory -->
+            	<Label text="User directory location: "
+            		GridPane.columnIndex="0" GridPane.rowIndex="0"/> 
+            	<TextField fx:id="userDirectoryLocationTextField"
+            		GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            	<Button text="Browse" onAction="#browseUserDirectoryLocation"
+            		GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            	
+            </GridPane>
+        </Tab>
+        <Tab text="Network" closable = "false">
+            
+        </Tab>
+    </tabs>
+	</TabPane>
+</center>
+	
+<bottom>
+	<HBox> 
+		<ToggleButton fx:id="applyButton" text="Apply"     
+        onAction="#apply"/>	
+	</HBox>
+</bottom>
+	
+</BorderPane>

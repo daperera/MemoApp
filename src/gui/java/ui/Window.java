@@ -5,9 +5,10 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class Window {
+public final class Window {
 		
 		//a convenience constructor for initializing a window 
 		public Window(Stage stage, String FXML_PATH, Object controller) {
@@ -18,11 +19,15 @@ public class Window {
 				
 				//loading the root node with this controller
 				Parent root = loader.load();
-				Scene scene = new Scene(root,400,400);
+				Scene scene = new Scene(root);
 				stage.setScene(scene);
+				stage.sizeToScene();
+				
+				//setting a custom icon
+				stage.getIcons().add(new Image(this.getClass().getResource("/gui/resources/data/main-icon.png").toString()));
+				
 				stage.show();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			

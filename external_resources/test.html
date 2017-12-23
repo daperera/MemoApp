@@ -9,20 +9,80 @@
 
 	<script>
 		var div1 = document.getElementById("div1");
-		div1.innerHTML = "javascript fonctionne !";		
+		println("javascript fonctionne !");		
+		
+		function ready() {
+			println("test 1");
+			insert("'nom0'",0);
+			insert("'nom1'",0);
+			select1();
 			
+			println("");
+			println("test 2");
+			select2();
+			
+			println("");
+			println("test 3");			
+			update("'un_nom_different'", 500, 5);
+			update("'un_nom_different'", 500, 16);
+			select2();
+			
+			println("");
+			println("test 4");			
+			deleteById(6);
+			deleteByName("'un_nom_different'");
+			deleteById(16);
+			select1();
+			
+			//database.query("DELETE FROM warehouses WHERE id >= 5");
+		}
+				
 		function cliquer() {
 			div1.innerHTML = "le lien a été cliqué";
 			query();
 		}
-		
-		function query() {
-			database.query("query bidon"); 		
+			
+		function insert(a, b) {
+			database.query("INSERT INTO warehouses(name,capacity) VALUES(" + a + "," + b + ");"); 
 		}
 		
-		function ready() {
-			query();
+		
+		function select1() {
+			var result = database.query("SELECT id, name, capacity FROM warehouses");
+			while(result.next()) {
+				println(result.getByLabel("id") + "\t" + result.getByLabel("name") + "\t" + result.getById(3));
+			}
 		}
+		
+		
+		function select2() {
+			
+           	var result = database.query("SELECT id, name, capacity FROM warehouses WHERE capacity > 1.5");
+			while(result.next()) {
+				println(result.getByLabel("id") + "\t" + result.getByLabel("name") + "\t" + result.getById(3));
+			}
+		}
+		
+		function update(name, capacity, id) {
+			database.query("UPDATE warehouses SET name = "+ name +" , capacity = " + capacity + " WHERE id = " + id);
+		}		
+		
+		function deleteById(id) {
+			database.query("DELETE FROM warehouses WHERE id = " + id);
+		}
+		
+		function deleteByName(name) {
+			database.query("DELETE FROM warehouses WHERE name = " + name);
+		}
+		
+		function print(text) {
+			div1.innerHTML += text;
+		}
+		
+		function println(text) {
+			print(text + "<br/>");
+		}
+		
 				
 	</script>
 

@@ -3,7 +3,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.HBox?>
+
 
 <BorderPane fx:id="root" stylesheets="@../css/mainWindow.css" xmlns:fx="http://javafx.com/fxml/1">
 
@@ -18,7 +18,7 @@
 			</Menu>
 			<Menu text="Tools">
 				<items>
-					<MenuItem fx:id="memotype" text="Manage Memo Type" onAction="#manageMemoType"/>
+					<MenuItem fx:id="manageMemo" text="Manage Memo" onAction="#manageMemo"/>
 					<MenuItem fx:id="preferences" text="Preferences" onAction="#preferences"/>
 				</items>
 			</Menu>

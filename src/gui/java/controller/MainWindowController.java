@@ -34,13 +34,13 @@ public class MainWindowController {
 	}
 	
 	@FXML
-	private void manageMemoType(ActionEvent e) {
-		
+	private void manageMemo(ActionEvent e) {
+		WindowFactory.createManageMemoWindow();
 	}
 	
 	@FXML
 	private void preferences(ActionEvent e) {
-		
+		WindowFactory.createPreferenceWindow();
 	}
 	
 	@FXML
