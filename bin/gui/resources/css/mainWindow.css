@@ -1,6 +1,6 @@
 .root {
-	-fx-pref-height : -1.0; 
-	-fx-pref-width : -1.0;
+	-fx-pref-height : 400px;
+	-fx-pref-width : 400px;
 }
 
 .context-menu {

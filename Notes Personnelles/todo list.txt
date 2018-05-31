@@ -1,4 +1,11 @@
 CONCERNANT L APPLICATION
+-sqlite
+->empecher l'utilisateur de créer une table nommée "backup" (nom reservé pour les besoins de l'application)
+-> autocommit on / off ?
+-> autoriser multiqueries ? Attention traitement queries autorisées
+-> renommer colonne : tout copier, drop ancienne table et renommer / copier et détruire au fur et a mesure, renommer
+- gestion des exceptions cf par exemple lecture base de donnée ? 
+->qui doit rattraper l'exception ? la propager ? si oui comment ?
 - preferences files vs properties files ?
 -> preferences API => se passer d'une classe Config et appeler Preferences.userNodeForPackage(MyProgram.class) 
 .> dans chaque classe qui en a besoin ? Si oui comment gérer les clés (il faut que ce soient les mêmes...)? 

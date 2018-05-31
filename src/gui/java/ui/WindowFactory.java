@@ -1,5 +1,6 @@
 package gui.java.ui;
 
+import gui.java.controller.EditMemoTypeController;
 import gui.java.controller.MainWindowController;
 import gui.java.controller.ManageMemoWindowController;
 import gui.java.controller.MirrorWindowController;
@@ -16,6 +17,7 @@ public final class WindowFactory {
 	private static final String MIRRORWINDOW_FXML = "/gui/resources/fxml/mirrorWindow.fxml";
 	private static final String PREFERENCEWINDOW_FXML = "/gui/resources/fxml/preferenceWindow.fxml";
 	private static final String MANAGEMEMOWINDOW_FXML = "/gui/resources/fxml/manageMemoWindow.fxml";
+	private static final String EDITMEMOTYPEWINDOW_FXML = "/gui/resources/fxml/editMemoTypeWindow.fxml";
 	
 	/**
 	 * This function initialize the primaryStage to make it the main window
@@ -110,6 +112,26 @@ public final class WindowFactory {
 		Window manageMemoWindow = new Window(secondaryStage, MANAGEMEMOWINDOW_FXML, controller);
 
 		return manageMemoWindow;
+	}
+
+
+	public static Window createEditMemoTypeWindow(String selectedTable) {
+		// creating a new stage 
+		Stage secondaryStage = new Stage();
+
+		//setting a controller
+		Object controller = new EditMemoTypeController(selectedTable);
+
+		//making it an modal window
+		secondaryStage.initModality(Modality.APPLICATION_MODAL);
+
+		//this stage cannot be resized
+		secondaryStage.setResizable(false);
+
+		//creating window
+		Window editMemoTypeWindow = new Window(secondaryStage, EDITMEMOTYPEWINDOW_FXML, controller);
+
+		return editMemoTypeWindow;
 	}
 	
 	

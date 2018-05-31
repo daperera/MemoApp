@@ -5,9 +5,13 @@ import gui.java.service.NodePrototype.NodePrototype;
 import gui.java.ui.WindowFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 public class MainWindowController {
+	
+	@FXML
+	private BorderPane root;
 	
 	@FXML
 	private VBox mainPanel;

@@ -46,9 +46,6 @@ class MemoPanelPrototype implements NodePrototype {
 	    //loading the html page
 	    webEngine.load(EngineLoadArg);
 	    
-	    //set the html page size
-	    browser.setPrefSize(800, 800);
-	    
 	    //returning browser as a Node
 	    return browser;
 	}

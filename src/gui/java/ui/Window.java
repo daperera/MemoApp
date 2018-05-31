@@ -13,7 +13,7 @@ public final class Window {
 		//a convenience constructor for initializing a window 
 		public Window(Stage stage, String FXML_PATH, Object controller) {
 			try {
-				//
+				//loading the controller of this stage
 				FXMLLoader loader = new FXMLLoader(getClass().getResource(FXML_PATH));
 				loader.setController(controller);
 				

@@ -98,7 +98,7 @@ public final class PreferenceWindowController {
 		}
 	}
 	
-	//prompt a dialog asking the users wether or not he wants to save the registered modifications 
+	//prompt a dialog asking the users whether or not he wants to save the registered modifications 
 	private void createSaveConfirmationDialog() {
 		
 		Alert alert = new Alert(AlertType.CONFIRMATION);
